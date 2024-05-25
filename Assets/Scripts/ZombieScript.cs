@@ -14,6 +14,14 @@ public class ZombieScript : EnemyScript
     // Update is called once per frame
     void Update()
     {
-        Move();
+        if(nonAggressive){
+            // Check if the timer is a whole number
+            if (Mathf.Approximately(GameManager.instance.globalTimer % 1f, 0f))
+            {
+                Walk();
+            }else{
+                Move();
+            }
+        }
     }
-}
+};

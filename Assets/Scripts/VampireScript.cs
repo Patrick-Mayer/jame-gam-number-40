@@ -43,6 +43,16 @@ public class VampireScript : EnemyScript
     // Update is called once per frame
     void Update()
     {
+        if(nonAggressive){
+            // Check if the timer is a whole number
+            if (Mathf.Approximately(GameManager.instance.globalTimer % 1f, 0f))
+            {
+                Walk();
+            }else{
+                Move();
+            }
+        }
+        
         VampireState initialState = state;
         
         //Don't put return statements cause it screws with debugging
@@ -51,7 +61,7 @@ public class VampireScript : EnemyScript
             {
                 movementTimer -= Time.deltaTime;
                 enemyMovementSpeed = SLOW_SPEED;
-                Move();
+                MoveTowardsPlayer();
             }else{
                 //offsets it slightly so that the attacking movement doesn't last too long.
                 movementTimer = MAX_MOVEMENT_TIMER - 1.0f;
@@ -84,7 +94,7 @@ public class VampireScript : EnemyScript
 
         if (state == VampireState.ATTACK){
             if (needsToChangeDirection){
-                ChangeDirection();
+                LookTowardsPlayer();
                 needsToChangeDirection = false;
             }
             
