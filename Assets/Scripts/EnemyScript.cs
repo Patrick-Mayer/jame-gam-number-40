@@ -25,6 +25,12 @@ public class EnemyScript : MonoBehaviour
         playerScript = playerObj.GetComponent<Player>();
     }
 
+    private void OnCollisionEnter(Collision collision){
+        if(collision.gameObject == playerObj){
+            Debug.Log("Successful collision");
+        }
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         //prevents vampire immediately killing player when teleporting
