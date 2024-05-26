@@ -1445,7 +1445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObj: {fileID: 0}
-  enemyObj: {fileID: 0}
+  enemyObj: {fileID: 2750893172706701579}
   enemySFX: {fileID: 0}
   nonAggressive: 1
 --- !u!54 &2614048913236778747
