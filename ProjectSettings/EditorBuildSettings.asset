@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level3.unity
     guid: cc11afb003b297b44a4fe1766e360207
   - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 3b3dace827210e042ae318019e1ad5da
+  - enabled: 0
     path: Assets/Scenes/NeedleFollowTesting.unity
     guid: d8903910313c18e44b7526bb5b27bc86
   m_configObjects: {}

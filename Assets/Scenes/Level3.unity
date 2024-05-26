@@ -3530,6 +3530,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3935046774744334791, guid: f8ac5f5d80c710845a1f42d4935443f0, type: 3}
+      propertyPath: m_Size.z
+      value: 3.049589
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935046774744334791, guid: f8ac5f5d80c710845a1f42d4935443f0, type: 3}
+      propertyPath: m_Center.y
+      value: 5.442251
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935046774744334791, guid: f8ac5f5d80c710845a1f42d4935443f0, type: 3}
+      propertyPath: m_Center.z
+      value: 0.1246132
+      objectReference: {fileID: 0}
     - target: {fileID: 4312425674922714622, guid: f8ac5f5d80c710845a1f42d4935443f0, type: 3}
       propertyPath: m_Name
       value: Necromancer

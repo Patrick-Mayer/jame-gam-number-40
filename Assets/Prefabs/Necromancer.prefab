@@ -354,9 +354,11 @@ MonoBehaviour:
   playerObj: {fileID: 0}
   enemyObj: {fileID: 0}
   enemySFX: {fileID: 0}
+  nonAggressive: 1
   keyPrefab: {fileID: 0}
+  healthFill: {fileID: 0}
   isSpawning: 0
-  skeletonPrefab: {fileID: 4312425674922714622, guid: cf24cafb0bbf7cf48b46ca4bbfa1a25c, type: 3}
+  skeletonPrefab: {fileID: 4312425674922714622, guid: 873aa6f66aaab5a489f6a56aa25ab2a1, type: 3}
   zombiePrefab: {fileID: 5428259044823009278, guid: 1833ac72e1d34e345a25a69971ad4994, type: 3}
   vampirePrefab: {fileID: 7097276650429088999, guid: 97ab1377851c49d4c905ab902e7ff932, type: 3}
 --- !u!65 &3935046774744334791

@@ -3,7 +3,16 @@ guid: 45bbfce789eb91e4cb939e711374ea50
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - rigidBody: {instanceID: 0}
+  - playerObj: {instanceID: 0}
+  - enemyObj: {instanceID: 0}
+  - enemySFX: {instanceID: 0}
+  - keyPrefab: {instanceID: 0}
+  - healthFill: {instanceID: 0}
+  - skeletonPrefab: {fileID: 4312425674922714622, guid: 873aa6f66aaab5a489f6a56aa25ab2a1, type: 3}
+  - zombiePrefab: {fileID: 2750893172706701579, guid: 41a9b4c94632c18408ffcf160730aee3, type: 3}
+  - vampirePrefab: {fileID: 7097276650429088999, guid: 97ab1377851c49d4c905ab902e7ff932, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
