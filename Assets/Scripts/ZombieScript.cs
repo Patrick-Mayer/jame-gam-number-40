@@ -21,7 +21,15 @@ public class ZombieScript : EnemyScript
 
     void UpdateHealthBar()
     {
-        healthFill.fillAmount = enemyHealth / maxHealth;
+        float mult = 100f * ((float)enemyHealth / maxHealth);
+        Debug.Log("mult: " + mult);
+
+        //healthFill.rectTransform.anchorMin.x -=
+        //Debug.Log("enemyHealth/maxHealth: " + enemyHealth);
+
+        Vector2 newSize = healthFill.rectTransform.sizeDelta;
+        newSize.x = mult;
+        healthFill.rectTransform.sizeDelta = newSize;        
     }
 
     // Update is called once per frame
