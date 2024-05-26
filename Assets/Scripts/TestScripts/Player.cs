@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    private bool debugMode = false;
-    public float speed = 5f; // Speed at which the object moves
+    [SerializeField] private GameObject playerObj;
     [SerializeField] private Rigidbody rb;
+<<<<<<< HEAD
 
     private GameObject playerObj;
 
@@ -32,12 +32,34 @@ public class Player : MonoBehaviour
 
     private float keyDoorTextRange = 10;
     [SerializeField] private GameObject doorText;
+=======
+    [SerializeField] private bool debugMode = false;
+    
+    public float speed = 5f; // Speed at which the object moves
+    public int playerHealth = 3;
+>>>>>>> origin/ScaredOfConflicts
 
     // Define isometric movement vectors
     private Vector3 isometricRight = new Vector3(1, 0, 1).normalized;
     private Vector3 isometricLeft = new Vector3(-1, 0, -1).normalized;
     private Vector3 isometricUp = new Vector3(-1, 0, 1).normalized;
     private Vector3 isometricDown = new Vector3(1, 0, -1).normalized;
+
+    //hardcoded rotation vals
+    private float turnRight;
+    private float turnDownRight;
+
+    private float turnDown;
+
+    private float turnDownLeft;
+
+    private float turnLeft;
+
+    private float turnUpLeft;
+
+    private float turnUp;
+    private float turnUpRight;
+
 
     void Start(){
         if(debugMode){
@@ -70,10 +92,16 @@ public class Player : MonoBehaviour
     //this is all ChatGPT BS, but Unity's input system is stupid so I don't care.
     void Update()
     {
+<<<<<<< HEAD
         CheckKeyText();
         CheckKeyCollision();
+=======
+        float oldYRot = playerObj.transform.rotation.eulerAngles.y;
+
+>>>>>>> origin/ScaredOfConflicts
         // Initialize a new velocity vector
         Vector3 newVelocity = Vector3.zero;
+        float newYRot = oldYRot;
 
         // Check if any of the WASD keys are held down and update the velocity accordingly
         if (Input.GetKey(KeyCode.W))
@@ -93,7 +121,16 @@ public class Player : MonoBehaviour
             newVelocity += isometricRight * speed;
         }
 
+<<<<<<< HEAD
         rb.velocity = newVelocity;        
+=======
+        rb.velocity = newVelocity;
+        
+        //this way we avoid Quaternions, cause I don't know crap about those
+        Vector3 newRotation = playerObj.transform.rotation.eulerAngles;
+        newRotation.y = newYRot;
+        playerObj.transform.rotation = Quaternion.Euler(newRotation);
+>>>>>>> origin/ScaredOfConflicts
     }
 
     private void CheckKeyText()

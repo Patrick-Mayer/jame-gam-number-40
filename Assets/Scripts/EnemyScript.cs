@@ -11,6 +11,7 @@ public class EnemyScript : MonoBehaviour
     public GameObject playerObj;
     public GameObject enemyObj;
     public AudioSource enemySFX;
+    public bool nonAggressive = true;
 
     [SerializeField] private GameObject keyPrefab;
 
@@ -65,6 +66,67 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision){
+        //prevents vampire immediately killing player when teleporting
+        if (VampireInstaKill()){
+            Debug.Log(GetState());
+            return;
+        }
+
+        GameObject needleObj = GameObject.Find("Needle");
+
+        if (collision.gameObject == needleObj) {
+            enemyHealth--;
+            enemySFX.Play();
+            ScoreScript.AddScore(1);
+
+            if(enemyHealth <= 0){
+                EnemyDeath();
+            }
+
+        }else if(collision.gameObject == playerObj){
+            //playerScript.DamagePlayer(1);
+            //Debug.Log("we get here");
+            playerObj.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            playerObj.GetComponent<Player>().DamagePlayer(1);
+        }
+    }
+
+    private void OnCollisionStay(Collision collision){
+        //prevents vampire immediately killing player when teleporting
+        if (VampireInstaKill()){
+            Debug.Log(GetState());
+            return;
+        }
+        
+        if (currentCooldown <= 0){
+            currentCooldown = MAX_JANK_COOLDOWN;
+
+            //Debug.Log("collision detected");
+
+            GameObject needleObj = GameObject.Find("Needle");
+            if (collision.gameObject == needleObj) {
+                enemyHealth--;
+                enemySFX.Play();
+                ScoreScript.AddScore(1);
+
+                if(enemyHealth <= 0){
+                    EnemyDeath();
+                }
+
+            }else if(collision.gameObject == playerObj){
+                //playerScript.DamagePlayer(1);
+                //Debug.Log("we get here");
+                playerObj.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                playerObj.GetComponent<Player>().DamagePlayer(1);
+            }
+
+        }else{
+            currentCooldown--;
+        }
+    }
+
+    /*
     private void OnTriggerEnter(Collider collision)
     {
         //prevents vampire immediately killing player when teleporting
@@ -133,6 +195,7 @@ public class EnemyScript : MonoBehaviour
         }
 
     }
+    */
 
     // Update is called once per frame
     void Update()
@@ -176,6 +239,7 @@ public class EnemyScript : MonoBehaviour
         Destroy(enemyObj);
     }
 
+<<<<<<< HEAD
     /*protected void FlashRed()
     {
         //MeshRenderer renderer = GetComponent<MeshRenderer>();
@@ -208,9 +272,31 @@ public class EnemyScript : MonoBehaviour
     Vector3 direction = (playerObj.transform.position - enemyObj.transform.position).normalized;
     direction.y = 0;
     enemyObj.transform.forward = direction;
+=======
+    protected void Walk(){
+        //really just picking between 3 values cause it's normalized, but this is most efficient way to do it
+        float newX = Random.Range(-0.1f, 0.1f);
+        float newZ = Random.Range(-0.1f, 0.1f);
+
+        Vector3 direction = new Vector3(newX, 0f, newZ).normalized;
+        enemyObj.transform.forward = direction;
+        Move();
+    }
+
+    protected void LookTowardsPlayer(){
+        Vector3 direction = (playerObj.transform.position - enemyObj.transform.position).normalized;
+        direction.y = 0;
+        enemyObj.transform.forward = direction;
+>>>>>>> origin/ScaredOfConflicts
+    }
+
+    protected void MoveTowardsPlayer(){
+        LookTowardsPlayer();
+        Move();
     }
 
     protected void Move(){
+<<<<<<< HEAD
         float distance = Vector3.Distance(playerObj.transform.position, transform.position);
 
         if (distance < sightRange)
@@ -218,6 +304,9 @@ public class EnemyScript : MonoBehaviour
             FacePlayer();
             enemyObj.GetComponent<Rigidbody>().velocity = enemyObj.transform.forward * enemyMovementSpeed;
         }
+=======
+        enemyObj.GetComponent<Rigidbody>().velocity = enemyObj.transform.forward * enemyMovementSpeed;
+>>>>>>> origin/ScaredOfConflicts
     }
 
 
