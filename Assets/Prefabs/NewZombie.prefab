@@ -1444,10 +1444,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64afc3d6b35540242aeefede4c016e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidBody: {fileID: 2614048913236778747}
   playerObj: {fileID: 0}
-  enemyObj: {fileID: 0}
+  enemyObj: {fileID: 2750893172706701579}
   enemySFX: {fileID: 0}
   nonAggressive: 1
+  keyPrefab: {fileID: 443326359296421748, guid: 44e6ea573819e2c43bc55f18580a6dc9, type: 3}
+  healthFill: {fileID: 0}
+  isSpawning: 0
 --- !u!54 &2614048913236778747
 Rigidbody:
   m_ObjectHideFlags: 0

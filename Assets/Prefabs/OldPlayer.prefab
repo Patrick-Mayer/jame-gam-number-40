@@ -122,9 +122,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerObj: {fileID: 4756426577226152602}
   rb: {fileID: 7319116077375248512}
+  keyCollect_SFX: {fileID: 0}
+  doorOpen_SFX: {fileID: 0}
+  damage_SFX: {fileID: 0}
+  doorText: {fileID: 0}
   debugMode: 0
   speed: 5
-  playerHealth: 3
 --- !u!54 &7319116077375248512
 Rigidbody:
   m_ObjectHideFlags: 0
