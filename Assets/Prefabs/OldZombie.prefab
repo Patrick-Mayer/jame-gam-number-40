@@ -96,7 +96,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cdfadc565665130429d29f3fc2e9dcb3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.299999
+      value: 10.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cdfadc565665130429d29f3fc2e9dcb3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -188,7 +188,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: cbf54a01bc4fec94b9d4c0dd2bb61c8e, type: 2}
     - target: {fileID: 919132149155446097, guid: cdfadc565665130429d29f3fc2e9dcb3, type: 3}
       propertyPath: m_Name
-      value: Zombie 1
+      value: OldZombie
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdfadc565665130429d29f3fc2e9dcb3, type: 3}
       propertyPath: m_Layer
@@ -270,8 +270,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4.4526978
-  m_Height: 10.1309185
+  m_Radius: 4.452698
+  m_Height: 10.13092
   m_Direction: 1
   m_Center: {x: -0.01, y: 4.565459, z: -0.6344201}
 --- !u!114 &5357767500884120017
@@ -286,10 +286,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64afc3d6b35540242aeefede4c016e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidBody: {fileID: 0}
   playerObj: {fileID: 0}
   enemyObj: {fileID: 2619596456366924174}
   enemySFX: {fileID: 0}
   nonAggressive: 1
+  keyPrefab: {fileID: 0}
+  healthFill: {fileID: 0}
+  isSpawning: 0
 --- !u!54 &1366647303678758539
 Rigidbody:
   m_ObjectHideFlags: 0
