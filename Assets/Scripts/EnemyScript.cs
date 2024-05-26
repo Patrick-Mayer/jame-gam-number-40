@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+//using UnityEngine.UIElements;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -10,11 +11,12 @@ public class EnemyScript : MonoBehaviour
 
     public GameObject playerObj;
     public GameObject enemyObj;
+
     public AudioSource enemySFX;
 
     [SerializeField] private GameObject keyPrefab;
 
-    [SerializeField] private Slider healthBar;
+    [SerializeField] private Image healthFill;
 
     protected int enemyHealth;
     protected float enemyMovementSpeed;
@@ -37,11 +39,13 @@ public class EnemyScript : MonoBehaviour
         //playerObj = GameObject.Find("Player");        
         playerScript = playerObj.GetComponent<Player>();
         keyPrefab = GameObject.Find("Key");
+        
+        UpdateHealthBar();
     }
 
     void UpdateHealthBar()
-    {
-
+    {        
+        //healthFill.fillAmount = enemyHealth / maxHealth;
     }
 
     private void onCollisionEnter(Collision collision)
