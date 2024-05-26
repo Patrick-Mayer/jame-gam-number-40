@@ -37,7 +37,7 @@ public class EnemyScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //playerObj = GameObject.Find("Player");        
+        //playerObj = GameObject.Find("Player");
         playerScript = playerObj.GetComponent<Player>();
         keyPrefab = GameObject.Find("Key");
         
@@ -102,7 +102,7 @@ public class EnemyScript : MonoBehaviour
             Debug.Log(GetState());
             return;
         }
-        
+
         if (currentCooldown <= 0){
             currentCooldown = MAX_JANK_COOLDOWN;
 
@@ -159,7 +159,7 @@ public class EnemyScript : MonoBehaviour
             //Debug.Log("we get here");
             playerObj.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             playerObj.GetComponent<Player>().DamagePlayer(1);
-        }        
+        }
     }
 
     //this is jank but it's a game jam
@@ -170,7 +170,7 @@ public class EnemyScript : MonoBehaviour
             //Debug.Log(GetState());
             return;
         }
-        
+
         if (currentCooldown <= 0){
             currentCooldown = MAX_JANK_COOLDOWN;
 
@@ -204,7 +204,7 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private bool IsLastEnemy()
@@ -233,7 +233,7 @@ public class EnemyScript : MonoBehaviour
     }
 
     void EnemyDeath(){
-        
+
         if(IsLastEnemy())
         {
             Vector3 offsetTransform = transform.position;
@@ -243,7 +243,6 @@ public class EnemyScript : MonoBehaviour
         Destroy(enemyObj);
     }
 
-<<<<<<< HEAD
     /*protected void FlashRed()
     {
         //MeshRenderer renderer = GetComponent<MeshRenderer>();
@@ -252,7 +251,7 @@ public class EnemyScript : MonoBehaviour
 
         MeshRenderer renderer = GetComponent<MeshRenderer>();
 
-        //Debug.Log("materials: " + renderer.materials);        
+        //Debug.Log("materials: " + renderer.materials);
 
         Material solidColorMaterial = new Material(Shader.Find("Unlit/Color"));
         solidColorMaterial.color = Color.red;
@@ -276,22 +275,6 @@ public class EnemyScript : MonoBehaviour
     Vector3 direction = (playerObj.transform.position - enemyObj.transform.position).normalized;
     direction.y = 0;
     enemyObj.transform.forward = direction;
-=======
-    protected void Walk(){
-        //really just picking between 3 values cause it's normalized, but this is most efficient way to do it
-        float newX = Random.Range(-0.1f, 0.1f);
-        float newZ = Random.Range(-0.1f, 0.1f);
-
-        Vector3 direction = new Vector3(newX, 0f, newZ).normalized;
-        enemyObj.transform.forward = direction;
-        Move();
-    }
-
-    protected void LookTowardsPlayer(){
-        Vector3 direction = (playerObj.transform.position - enemyObj.transform.position).normalized;
-        direction.y = 0;
-        enemyObj.transform.forward = direction;
->>>>>>> origin/ScaredOfConflicts
     }
 
     protected void MoveTowardsPlayer(){
@@ -300,22 +283,18 @@ public class EnemyScript : MonoBehaviour
     }
 
     protected void Move(){
-<<<<<<< HEAD
         float distance = Vector3.Distance(playerObj.transform.position, transform.position);
 
         if (distance < sightRange)
-        {            
+        {
             FacePlayer();
             enemyObj.GetComponent<Rigidbody>().velocity = enemyObj.transform.forward * enemyMovementSpeed;
         }
-=======
-        enemyObj.GetComponent<Rigidbody>().velocity = enemyObj.transform.forward * enemyMovementSpeed;
->>>>>>> origin/ScaredOfConflicts
     }
 
 
     //this crap is here for inheritance reasons
-    
+
     enum VampireState
         {
             MOVING,
@@ -324,7 +303,7 @@ public class EnemyScript : MonoBehaviour
             ATTACK,
             SECOND_COOLDOWN,
         }
-    
+
     //! ONLY CALL THIS METHOD IF YOU KNOW FOR SURE IT'S A VAMPIRE OBJ
     VampireState GetState(){
         return (VampireState)enemyObj.GetComponent<VampireScript>().state;
