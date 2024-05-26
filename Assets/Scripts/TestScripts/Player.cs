@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private GameObject playerObj;
     [SerializeField] private Rigidbody rb;
-<<<<<<< HEAD
 
     private GameObject playerObj;
 
@@ -32,12 +31,6 @@ public class Player : MonoBehaviour
 
     private float keyDoorTextRange = 10;
     [SerializeField] private GameObject doorText;
-=======
-    [SerializeField] private bool debugMode = false;
-    
-    public float speed = 5f; // Speed at which the object moves
-    public int playerHealth = 3;
->>>>>>> origin/ScaredOfConflicts
 
     // Define isometric movement vectors
     private Vector3 isometricRight = new Vector3(1, 0, 1).normalized;
@@ -70,7 +63,7 @@ public class Player : MonoBehaviour
 
         heartArr[0] = heart1;
         heartArr[1] = heart2;
-        heartArr[2] = heart3;        
+        heartArr[2] = heart3;
 
         playerObj = GameObject.Find("Player");
 
@@ -92,13 +85,8 @@ public class Player : MonoBehaviour
     //this is all ChatGPT BS, but Unity's input system is stupid so I don't care.
     void Update()
     {
-<<<<<<< HEAD
         CheckKeyText();
         CheckKeyCollision();
-=======
-        float oldYRot = playerObj.transform.rotation.eulerAngles.y;
-
->>>>>>> origin/ScaredOfConflicts
         // Initialize a new velocity vector
         Vector3 newVelocity = Vector3.zero;
         float newYRot = oldYRot;
@@ -121,16 +109,7 @@ public class Player : MonoBehaviour
             newVelocity += isometricRight * speed;
         }
 
-<<<<<<< HEAD
-        rb.velocity = newVelocity;        
-=======
         rb.velocity = newVelocity;
-        
-        //this way we avoid Quaternions, cause I don't know crap about those
-        Vector3 newRotation = playerObj.transform.rotation.eulerAngles;
-        newRotation.y = newYRot;
-        playerObj.transform.rotation = Quaternion.Euler(newRotation);
->>>>>>> origin/ScaredOfConflicts
     }
 
     private void CheckKeyText()
@@ -138,25 +117,25 @@ public class Player : MonoBehaviour
         if (hasKey)
             return;
 
-        GameObject doorObj = GameObject.Find("KeyDoor");        
+        GameObject doorObj = GameObject.Find("KeyDoor");
         if (doorObj == null)
             return;
 
         float distance = Vector3.Distance(playerObj.transform.position, doorObj.transform.position);
-        
+
         if (distance < keyDoorTextRange)
-        {            
+        {
             doorText.SetActive(true);
         }
         else
-        {            
+        {
             doorText.SetActive(false);
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject portal = GameObject.Find("Portal");        
+        GameObject portal = GameObject.Find("Portal");
         GameObject keyDoor = GameObject.Find("KeyDoor");
 
         //Debug.Log("key(clone): " + key);
@@ -164,22 +143,22 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             playerHealth = maxPlayerHP;
-        }       
+        }
         else if (collision.gameObject == keyDoor && hasKey)
         {
             collision.gameObject.SetActive(false);
             hasKey = false;
-            doorOpen_SFX.Play();            
+            doorOpen_SFX.Play();
         }
-    }    
+    }
 
     // check distance to key instead of using collider to prevent jitter since key is solid
     private void CheckKeyCollision()
     {
         GameObject key = GameObject.Find("KeyMesh");
-        if(key == null)       
+        if(key == null)
             return;
-        
+
         float distance = Vector3.Distance(playerObj.transform.position, key.transform.position);
         Debug.Log("distance: " + distance);
 
@@ -187,8 +166,8 @@ public class Player : MonoBehaviour
         {
             Destroy(key);
             hasKey = true;
-            keyCollect_SFX.Play();            
-        }                
+            keyCollect_SFX.Play();
+        }
     }
 
         public void DamagePlayer(int damage){
@@ -207,9 +186,9 @@ public class Player : MonoBehaviour
     }
 
     private void UpdateHearts()
-    {        
+    {
         for (int heartIndex = 0; heartIndex < maxPlayerHP; heartIndex++)
-        {            
+        {
             if (heartIndex >= playerHealth)
             {
                 heartArr[heartIndex].enabled = false;
@@ -217,8 +196,8 @@ public class Player : MonoBehaviour
             else
             {
                 heartArr[heartIndex].enabled = true;
-            }            
+            }
         }
-        
+
     }
 }
