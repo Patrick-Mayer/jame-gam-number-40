@@ -21,7 +21,7 @@ public class DynamicNeedleFollow : MonoBehaviour
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
         // Move the needle towards the hit point of the raycase
-        if (Physics.Raycast(ray, out RaycastHit hit,Mathf.Infinity, ~LayerMask.NameToLayer("floor")))
+        if (Physics.Raycast(ray, out RaycastHit hit,Mathf.Infinity, (1 << LayerMask.NameToLayer("floor"))))
         {
             Vector3 lookAtCursor = hit.point - transform.position;
             lookAtCursor.y = yRot;
@@ -31,7 +31,9 @@ public class DynamicNeedleFollow : MonoBehaviour
             
             Vector3 direction = (hit.point - transform.position).normalized;
             direction.y = 0;
-            rigidBody.velocity = direction * speed;            
+            rigidBody.velocity = direction * speed;
+            Debug.Log(hit.collider.gameObject.name);
+            //Debug.Log(LayerMask.NameToLayer("floor"));
         }
 
         //forces yPos and yRot to always be zero
