@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class VampireScript : EnemyScript
 {
+    private int maxHealth = 3;
     //state machine goes BRRRRRRRRRRRRRRRRRRRR
     //Moves, then TPs, then cooldown, then dashes-attacks towards player, then cooldown, then repeat
     public enum VampireState

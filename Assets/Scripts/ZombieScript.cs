@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ZombieScript : EnemyScript
 {
+    private int maxHealth = 5;
     // Start is called before the first frame update
     void Start()
     {
-        enemyHealth = 5;
+        enemyHealth = 5;        
         enemyMovementSpeed = 3f;
         playerObj = GameObject.Find("Player");
 
@@ -18,10 +19,16 @@ public class ZombieScript : EnemyScript
         sightRange = 30f;
     }
 
+    void UpdateHealthBar()
+    {
+        healthFill.fillAmount = enemyHealth / maxHealth;
+    }
+
     // Update is called once per frame
     void Update()
     {
         //FlashRed();
+        //UpdateHealthBar();
 
         if (isSpawning)
         {
