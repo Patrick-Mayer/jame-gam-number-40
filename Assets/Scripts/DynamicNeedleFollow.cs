@@ -32,7 +32,7 @@ public class DynamicNeedleFollow : MonoBehaviour
             Vector3 direction = (hit.point - transform.position).normalized;
             direction.y = 0;
             rigidBody.velocity = direction * speed;
-            Debug.Log(hit.collider.gameObject.name);
+            //Debug.Log(hit.collider.gameObject.name);
             //Debug.Log(LayerMask.NameToLayer("floor"));
         }
 
