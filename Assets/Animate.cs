@@ -12,6 +12,6 @@ public class Animate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.localScale = new Vector3(96f, 96f, 96f);
+        //transform.localScale = new Vector3(96f, 96f, 96f);
     }
 }
