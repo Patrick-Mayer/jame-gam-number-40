@@ -1514,7 +1514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 0}
   playerObj: {fileID: 0}
-  enemyObj: {fileID: 0}
+  enemyObj: {fileID: 2750893172706701579}
   enemySFX: {fileID: 0}
   nonAggressive: 1
   keyPrefab: {fileID: 443326359296421748, guid: 44e6ea573819e2c43bc55f18580a6dc9, type: 3}
