@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 9154917906523150971}
   - component: {fileID: 7547818190541012479}
   - component: {fileID: 7319116077375248512}
-  m_Layer: 0
-  m_Name: Player
+  m_Layer: 3
+  m_Name: OldPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +102,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -120,8 +120,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889632e2c666fc540ad04e07646fe542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  playerObj: {fileID: 4756426577226152602}
   rb: {fileID: 7319116077375248512}
+  debugMode: 0
+  speed: 5
+  playerHealth: 3
 --- !u!54 &7319116077375248512
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -147,7 +150,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 36
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!1 &6090571601811981232
 GameObject:
@@ -160,7 +163,7 @@ GameObject:
   - component: {fileID: 3836348592627066311}
   - component: {fileID: 9118956642752155362}
   - component: {fileID: 5411152216749664252}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}

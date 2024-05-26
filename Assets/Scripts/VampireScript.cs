@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class VampireScript : EnemyScript
-{    
+{
     //state machine goes BRRRRRRRRRRRRRRRRRRRR
     //Moves, then TPs, then cooldown, then dashes-attacks towards player, then cooldown, then repeat
     public enum VampireState
@@ -17,7 +17,7 @@ public class VampireScript : EnemyScript
     }
 
     public VampireState state;
-    
+
     private const float MAX_MOVEMENT_TIMER = 1.5f;
     private const float MAX_FIRST_COOLDOWN_TIMER = 1f, MAX_SECOND_COOLDOWN_TIMER = 1f;
 
@@ -26,7 +26,7 @@ public class VampireScript : EnemyScript
     private const float SLOW_SPEED = 5f, FAST_SPEED = 18f;
 
     private bool needsToChangeDirection = true;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,12 +35,12 @@ public class VampireScript : EnemyScript
         movementTimer = MAX_MOVEMENT_TIMER;
         firstCooldownTimer = MAX_FIRST_COOLDOWN_TIMER;
         secondCooldownTimer = MAX_SECOND_COOLDOWN_TIMER;
-                
+
         enemyMovementSpeed = SLOW_SPEED;
 
         state = VampireState.MOVING;
-        
-        playerObj = GameObject.Find("Player");        
+
+        playerObj = GameObject.Find("Player");
 
         enemySFX = GameObject.Find("ZombVampHit_SFX").GetComponent<AudioSource>();
 
@@ -49,12 +49,12 @@ public class VampireScript : EnemyScript
 
     // Update is called once per frame
     void Update()
-    {        
+    {
         if (isSpawning)
         {
             summonTimer += Time.deltaTime;
             if (summonTimer >= NecromancerScript.summonLength)
-            {                
+            {
                 summonTimer = 0f;
                 isSpawning = false;
             }
@@ -74,18 +74,18 @@ public class VampireScript : EnemyScript
 
         float distance = Vector3.Distance(playerObj.transform.position, transform.position);
 
-        if (distance > sightRange)        
-            return;        
+        if (distance > sightRange)
+            return;
 
             VampireState initialState = state;
-        
+
         //Don't put return statements cause it screws with debugging
         if (state == VampireState.MOVING){
             if (movementTimer > 0)
             {
                 movementTimer -= Time.deltaTime;
                 enemyMovementSpeed = SLOW_SPEED;
-                Move();
+                MoveTowardsPlayer();
             }else{
                 //offsets it slightly so that the attacking movement doesn't last too long.
                 movementTimer = MAX_MOVEMENT_TIMER - 1.0f;
@@ -105,7 +105,7 @@ public class VampireScript : EnemyScript
 
             state = VampireState.FIRST_COOLDOWN;
         }
-        
+
         if (state == VampireState.FIRST_COOLDOWN){
             if (firstCooldownTimer > 0)
             {
@@ -121,7 +121,7 @@ public class VampireScript : EnemyScript
                 FacePlayer();
                 needsToChangeDirection = false;
             }
-            
+
             if (movementTimer > 0)
             {
                 movementTimer -= Time.deltaTime;
@@ -146,10 +146,10 @@ public class VampireScript : EnemyScript
 
         //logs the changing of state
         if (initialState != state){
-            //Debug.Log("State has changed to " + state);   
+            //Debug.Log("State has changed to " + state);
         }
     }
-    
+
     void Dash(){
         enemyObj.GetComponent<Rigidbody>().velocity = enemyObj.transform.forward * enemyMovementSpeed;
     }

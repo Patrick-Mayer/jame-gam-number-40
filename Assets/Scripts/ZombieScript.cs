@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ZombieScript : EnemyScript
-{    
+{
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +41,7 @@ public class ZombieScript : EnemyScript
         {
             Move();
         }
-        
+
         if (summonTimer >= NecromancerScript.summonLength)
         {
             //Debug.Log("enemy can move");
@@ -49,4 +49,4 @@ public class ZombieScript : EnemyScript
             isSpawning = false;
         }
     }
-}
+};
