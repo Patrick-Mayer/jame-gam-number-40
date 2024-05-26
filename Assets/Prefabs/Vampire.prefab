@@ -348,7 +348,7 @@ PrefabInstance:
       addedObject: {fileID: 4880773474505485431}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aee12735282f2c64fb293ef03fd071b5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8273138719289068441}
+      addedObject: {fileID: 8728079017098144196}
   m_SourcePrefab: {fileID: 100100000, guid: aee12735282f2c64fb293ef03fd071b5, type: 3}
 --- !u!1 &7097276650429088999 stripped
 GameObject:
@@ -420,14 +420,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!33 &8273138719289068441
-MeshFilter:
+--- !u!111 &8728079017098144196
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7097276650429088999}
-  m_Mesh: {fileID: 0}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 9fd118fba9093ff45ac8a74b1c9cf0e3, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 9fd118fba9093ff45ac8a74b1c9cf0e3, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!4 &7581043811433864797 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aee12735282f2c64fb293ef03fd071b5, type: 3}

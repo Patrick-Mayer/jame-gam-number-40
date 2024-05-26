@@ -1,12 +1,12 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &750843238348068808
+--- !u!1001 &2248466870227581463
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 4620372691953278276}
+    m_TransformParent: {fileID: 3391630213248924468}
     m_Modifications:
     - target: {fileID: 4292454014361817534, guid: 92074960e4165d34a9da4a940185960c, type: 3}
       propertyPath: m_Radius
@@ -59,18 +59,18 @@ PrefabInstance:
     - target: {fileID: 8278470672724378205, guid: 92074960e4165d34a9da4a940185960c, type: 3}
       propertyPath: enemyObj
       value: 
-      objectReference: {fileID: 5428259044823009278}
+      objectReference: {fileID: 2619596456366924174}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92074960e4165d34a9da4a940185960c, type: 3}
---- !u!4 &5227850263767914800 stripped
+--- !u!4 &6760643402855494895 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4820692113445097208, guid: 92074960e4165d34a9da4a940185960c, type: 3}
-  m_PrefabInstance: {fileID: 750843238348068808}
+  m_PrefabInstance: {fileID: 2248466870227581463}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &5157858552768314031
+--- !u!1001 &2926148750081678559
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -188,7 +188,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: cbf54a01bc4fec94b9d4c0dd2bb61c8e, type: 2}
     - target: {fileID: 919132149155446097, guid: cdfadc565665130429d29f3fc2e9dcb3, type: 3}
       propertyPath: m_Name
-      value: Zombie
+      value: Zombie 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdfadc565665130429d29f3fc2e9dcb3, type: 3}
       propertyPath: m_Layer
@@ -231,35 +231,33 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cdfadc565665130429d29f3fc2e9dcb3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5227850263767914800}
+      addedObject: {fileID: 6760643402855494895}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cdfadc565665130429d29f3fc2e9dcb3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6937270287111567427}
+      addedObject: {fileID: 4052599137777937984}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cdfadc565665130429d29f3fc2e9dcb3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 367332278019056537}
+      addedObject: {fileID: 5357767500884120017}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cdfadc565665130429d29f3fc2e9dcb3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2754722216430345613}
+      addedObject: {fileID: 1366647303678758539}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cdfadc565665130429d29f3fc2e9dcb3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4875590426201970708}
   m_SourcePrefab: {fileID: 100100000, guid: cdfadc565665130429d29f3fc2e9dcb3, type: 3}
---- !u!4 &4620372691953278276 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cdfadc565665130429d29f3fc2e9dcb3, type: 3}
-  m_PrefabInstance: {fileID: 5157858552768314031}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5428259044823009278 stripped
+--- !u!1 &2619596456366924174 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cdfadc565665130429d29f3fc2e9dcb3, type: 3}
-  m_PrefabInstance: {fileID: 5157858552768314031}
+  m_PrefabInstance: {fileID: 2926148750081678559}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &6937270287111567427
+--- !u!136 &4052599137777937984
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5428259044823009278}
+  m_GameObject: {fileID: 2619596456366924174}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -276,29 +274,29 @@ CapsuleCollider:
   m_Height: 10.1309185
   m_Direction: 1
   m_Center: {x: -0.01, y: 4.565459, z: -0.6344201}
---- !u!114 &367332278019056537
+--- !u!114 &5357767500884120017
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5428259044823009278}
+  m_GameObject: {fileID: 2619596456366924174}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64afc3d6b35540242aeefede4c016e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerObj: {fileID: 0}
-  enemyObj: {fileID: 5428259044823009278}
+  enemyObj: {fileID: 2619596456366924174}
   enemySFX: {fileID: 0}
   nonAggressive: 1
---- !u!54 &2754722216430345613
+--- !u!54 &1366647303678758539
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5428259044823009278}
+  m_GameObject: {fileID: 2619596456366924174}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -319,3 +317,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!111 &4875590426201970708
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619596456366924174}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: d5daba23e35ab704690fb59a7c9c93b7, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: d5daba23e35ab704690fb59a7c9c93b7, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!4 &3391630213248924468 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cdfadc565665130429d29f3fc2e9dcb3, type: 3}
+  m_PrefabInstance: {fileID: 2926148750081678559}
+  m_PrefabAsset: {fileID: 0}
