@@ -10,8 +10,6 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject playerObj;
     [SerializeField] private Rigidbody rb;
 
-    private GameObject playerObj;
-
     [SerializeField] private AudioSource keyCollect_SFX;
     [SerializeField] private AudioSource doorOpen_SFX;
 
@@ -53,6 +51,9 @@ public class Player : MonoBehaviour
     private float turnUp;
     private float turnUpRight;
 
+    [SerializeField] private bool debugMode = false;
+
+    public float speed = 5f; // Speed at which the object moves
 
     void Start(){
         if(debugMode){
@@ -89,7 +90,6 @@ public class Player : MonoBehaviour
         CheckKeyCollision();
         // Initialize a new velocity vector
         Vector3 newVelocity = Vector3.zero;
-        float newYRot = oldYRot;
 
         // Check if any of the WASD keys are held down and update the velocity accordingly
         if (Input.GetKey(KeyCode.W))

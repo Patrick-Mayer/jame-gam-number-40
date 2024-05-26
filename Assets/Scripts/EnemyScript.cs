@@ -78,7 +78,6 @@ public class EnemyScript : MonoBehaviour
         if (collision.gameObject == needleObj) {
             enemyHealth--;
             enemySFX.Play();
-            ScoreScript.AddScore(1);
 
             if(enemyHealth <= 0){
                 EnemyDeath();
@@ -108,7 +107,6 @@ public class EnemyScript : MonoBehaviour
             if (collision.gameObject == needleObj) {
                 enemyHealth--;
                 enemySFX.Play();
-                ScoreScript.AddScore(1);
 
                 if(enemyHealth <= 0){
                     EnemyDeath();
@@ -276,6 +274,13 @@ public class EnemyScript : MonoBehaviour
     protected void MoveTowardsPlayer(){
         LookTowardsPlayer();
         Move();
+    }
+
+    protected void LookTowardsPlayer()
+    {
+        Vector3 direction = (playerObj.transform.position - enemyObj.transform.position).normalized;
+        direction.y = 0;
+        enemyObj.transform.forward = direction;
     }
 
     protected void Move(){
