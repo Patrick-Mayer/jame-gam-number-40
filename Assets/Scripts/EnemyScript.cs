@@ -128,7 +128,7 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    /*
+    
     private void OnTriggerEnter(Collider collision)
     {
         //prevents vampire immediately killing player when teleporting
@@ -197,7 +197,7 @@ public class EnemyScript : MonoBehaviour
         }
 
     }
-    */
+    
 
     // Update is called once per frame
     void Update()
