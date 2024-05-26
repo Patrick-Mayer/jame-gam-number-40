@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class EnemyScript : MonoBehaviour
     public AudioSource enemySFX;
 
     [SerializeField] private GameObject keyPrefab;
+
+    [SerializeField] private Slider healthBar;
 
     protected int enemyHealth;
     protected float enemyMovementSpeed;
@@ -34,6 +37,11 @@ public class EnemyScript : MonoBehaviour
         //playerObj = GameObject.Find("Player");        
         playerScript = playerObj.GetComponent<Player>();
         keyPrefab = GameObject.Find("Key");
+    }
+
+    void UpdateHealthBar()
+    {
+
     }
 
     private void onCollisionEnter(Collision collision)

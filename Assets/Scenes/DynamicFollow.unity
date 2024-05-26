@@ -4144,6 +4144,22 @@ PrefabInstance:
       propertyPath: playerObj
       value: 
       objectReference: {fileID: 8232762634223182928}
+    - target: {fileID: 3397672695249467652, guid: 1833ac72e1d34e345a25a69971ad4994, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397672695249467652, guid: 1833ac72e1d34e345a25a69971ad4994, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -487.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397672695249467652, guid: 1833ac72e1d34e345a25a69971ad4994, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -200.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 3556111225182603723, guid: 1833ac72e1d34e345a25a69971ad4994, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4620372691953278276, guid: 1833ac72e1d34e345a25a69971ad4994, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.4
