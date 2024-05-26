@@ -17,7 +17,7 @@ public class EnemyScript : MonoBehaviour
 
     [SerializeField] private GameObject keyPrefab;
 
-    [SerializeField] private Image healthFill;
+    [SerializeField] protected Image healthFill;
 
     protected int enemyHealth;
     protected float enemyMovementSpeed;
@@ -39,36 +39,8 @@ public class EnemyScript : MonoBehaviour
     {
         //playerObj = GameObject.Find("Player");
         playerScript = playerObj.GetComponent<Player>();
-        keyPrefab = GameObject.Find("Key");
-        
-        UpdateHealthBar();
-    }
-
-    void UpdateHealthBar()
-    {        
-        //healthFill.fillAmount = enemyHealth / maxHealth;
-    }
-
-    private void onCollisionEnter(Collision collision)
-    {
-        GameObject needleObj = GameObject.Find("Needle");
-        GameObject collidedObj = collision.gameObject;
-
-        if (collidedObj == needleObj)
-        {
-            enemyHealth--;
-            enemySFX.Play();
-
-            Debug.Log("needle hit");
-
-            //Debug.Log("vampire took damage");
-
-            if (enemyHealth <= 0)
-            {
-                EnemyDeath();
-            }
-        }
-    }
+        //keyPrefab = GameObject.Find("Key");        
+    }        
 
     private void OnCollisionEnter(Collision collision){
         //prevents vampire immediately killing player when teleporting
@@ -81,7 +53,7 @@ public class EnemyScript : MonoBehaviour
 
         if (collision.gameObject == needleObj) {
             enemyHealth--;
-            enemySFX.Play();
+            enemySFX.Play();            
 
             if(enemyHealth <= 0){
                 EnemyDeath();
@@ -161,7 +133,7 @@ public class EnemyScript : MonoBehaviour
     }
 
     //this is jank but it's a game jam
-    private void OnTriggerStay(Collider collision)
+    /*private void OnTriggerStay(Collider collision)
     {
         //prevents vampire immediately killing player when teleporting
         if (VampireInstaKill()){
@@ -196,7 +168,7 @@ public class EnemyScript : MonoBehaviour
             currentCooldown--;
         }
 
-    }
+    }*/
     
 
     // Update is called once per frame

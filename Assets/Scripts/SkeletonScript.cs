@@ -5,6 +5,7 @@ using UnityEngine;
 public class SkeletonScript : EnemyScript
 {
     [SerializeField] private GameObject skeletonObj;
+    private int maxHealth = 1;
 
     // Start is called before the first frame update
     void Start()
